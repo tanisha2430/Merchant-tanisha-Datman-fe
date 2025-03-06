@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 export default function NotificationsPage() {
     const [selectedFilter, setSelectedFilter] = useState('all');

@@ -54,9 +54,6 @@ const useTask = () => {
 
 
 
-
-
-
   const fetchTasksByMerchant = async (merchantId) => {
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/merchantId/${merchantId}`, {
@@ -81,9 +78,6 @@ const useTask = () => {
 
 
 
-
-
-
   // Create a new task
   const createTask = async (taskDetails) => {
     try {
@@ -100,7 +94,7 @@ const useTask = () => {
 
       if (response.ok) {
         toast.success("Task created successfully");
-        setTasks((prev) => [...prev, data.task]);
+        setTasks((prev) => [...prev, data.task]); 
       } else {
         toast.error(data.error || "Failed to create task");
       }

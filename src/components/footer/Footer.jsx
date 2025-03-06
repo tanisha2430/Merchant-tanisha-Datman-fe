@@ -29,10 +29,6 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="container text-center">
-            {/* <img src="heartp.png" className='w-full h-48  m-5' alt="" /> */}
-            {/* <p className="mt-5 text-sm">Contact: tanishasaxena2412@gmail.com | Phone: 9997377223</p> */}
-          </div>
         </div>
       </footer>
 

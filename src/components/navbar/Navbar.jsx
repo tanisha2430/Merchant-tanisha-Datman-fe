@@ -10,7 +10,6 @@ function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  // Check authentication status
   useEffect(() => {
     setIsAuthenticated(!!localStorage.getItem('auth'));
   }, [localStorage.getItem('auth')]);
@@ -23,7 +22,7 @@ function Navbar() {
     localStorage.clear();
     setIsAuthenticated(false);
     toast.error('Logged out');
-    navigate('/loginsignup'); // Redirect to login
+    navigate('/loginsignup'); 
   };
 
   return (
@@ -41,36 +40,27 @@ function Navbar() {
         </button>
 
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto`}>
-          <ul className="text-orange-800 font-semibold md:flex flex-col space-y-5 md:space-y-0 md:flex-row gap-5 text-[18px] w-full md:w-auto">
-            {/* <li>
+          <ul className="text-orange-800 mr-5 font-semibold md:flex flex-col space-y-5 md:space-y-0 md:flex-row gap-5 text-[18px] w-full md:w-auto">
+            <li>
             <NavLink to="/" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer`}>
               Home
             </NavLink>
-          </li> */}
+          </li>
             <li className='mt-10 md:mt-0'>
               <NavLink to="/" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer `}>
-                <FaBell className='h-6 w-6 mt-1 mr-5' />
+                <FaBell className='h-5 w-5 mt-2 ml-5 mr-5' />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className="hover:underline hover:border-white cursor-pointer mt-1 mr-10">
+              <NavLink to="/" className="hover:underline hover:border-white cursor-pointer mr-10">
                 Settings
               </NavLink>
             </li>
-            {/* <li>
-            <NavLink to="/about" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer`}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer`}>
-              Add-Testimonial
-            </NavLink>
-          </li> */}
+           
             <li>
               <button
                 onClick={handleLogout}
-                className="bg-orange-800 p-2 pl-4 pr-4 border-2 border-white rounded-lg hover:bg-orange-700 text-white"
+                className="bg-orange-800 p-2 border-2 border-white rounded-lg hover:bg-orange-700 text-white"
               >
                 Logout
               </button>

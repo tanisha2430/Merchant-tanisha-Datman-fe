@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 
 const useInteraction = () => {
   const [interactions, setInteractions] = useState([]);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const authToken = localStorage.getItem("authToken");
 
-  const navigate = useNavigate();
 
   // Create an interaction
   const createInteraction = async (interactionDetails) => {

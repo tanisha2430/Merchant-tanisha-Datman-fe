@@ -1,11 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink,useNavigate } from 'react-router-dom';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-import { GiHeartOrgan } from "react-icons/gi";
-import { TbAccessPoint } from "react-icons/tb";
-import { MdStars } from "react-icons/md";
-import { FaUsersLine } from "react-icons/fa6";
-import { SiSololearn } from "react-icons/si";
 
 
 function Home() {
@@ -44,9 +39,7 @@ const navigate=useNavigate()
             </div>
           </div>
           <div className="flex flex-1 items-center justify-center  p-4 md:p-0">
-            {/* <NavLink to=""> */}
               <img src="/home-2.png" className="object-cover w-full h-auto  md:mr-10 md:mt-10"  alt="" />
-            {/* </NavLink> */}
           </div>
         </div>
 
