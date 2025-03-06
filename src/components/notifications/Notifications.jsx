@@ -40,7 +40,7 @@ export default function NotificationsPage() {
                 {filteredNotifications.length > 0 ? (
                     filteredNotifications.map((notif) => (
                         <div key={notif.id} className="bg-white p-4 rounded shadow border border-gray-300">
-                            <p className="text-lg font-medium">{notif.message}</p>
+                            <p className="text-lg font-medium">task Reminder at task_reminder_date, task_reminder_time</p>
                             <span className="text-sm text-gray-500">Type: {notif.type}</span>
                         </div>
                     ))
