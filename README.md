@@ -12,7 +12,7 @@ This project adds a **"Merchant Interactions"** feature to a CRM system, enablin
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/Tanishasaxena24/Merchant-Interactions-Website.git
+   git clone https://github.com/tanisha2430/Merchant-tanisha-Datman-fe.git
 
 2. **Running the Client (Frontend)**:
 
