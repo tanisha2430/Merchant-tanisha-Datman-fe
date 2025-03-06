@@ -1,18 +1,25 @@
 import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import useInteraction from "../../Hooks/useInteraction";
+import Loader from "../loader/Loader";
 
 const Interactions = () => {
   const { id: merchantId } = useParams();
-  const { interactions, fetchInteractionsByMerchant } = useInteraction();
+  const { interactions, fetchInteractionsByMerchant,loading } = useInteraction();
 
   useEffect(() => {
     fetchInteractionsByMerchant(merchantId);
   }, [merchantId]);
 
+  if(loading){
+    <Loader/>
+  }
 
 
-  return (
+
+  return loading ? (
+    <Loader/>
+  ):(
     <div className="min-h-screen bg-orange-100 p-5">
       <div className="flex justify-between items-center bg-blue-900 rounded-md text-white p-4">
         <h1 className="font-bold md:text-xl">Ongoing Interactions</h1>

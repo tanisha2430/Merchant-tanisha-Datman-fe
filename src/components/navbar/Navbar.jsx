@@ -41,21 +41,17 @@ function Navbar() {
 
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto`}>
           <ul className="text-orange-800 mr-5 font-semibold md:flex flex-col space-y-5 md:space-y-0 md:flex-row gap-5 text-[18px] w-full md:w-auto">
-            <li>
-            <NavLink to="/" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer`}>
+            <li className='mt-10 md:mt-0'>
+            <NavLink to="/" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white  cursor-pointer`}>
               Home
             </NavLink>
           </li>
-            <li className='mt-10 md:mt-0'>
+            <li className='mt-5 md:mt-0'>
               <NavLink to="/" className={({ isActive }) => `${isActive ? 'underline text-orange-800' : 'text-orange-700'} hover:underline hover:border-white cursor-pointer `}>
                 <FaBell className='h-5 w-5 mt-2 ml-5 mr-5' />
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/" className="hover:underline hover:border-white cursor-pointer mr-10">
-                Settings
-              </NavLink>
-            </li>
+           
            
             <li>
               <button

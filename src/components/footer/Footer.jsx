@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
       </footer>
 
-      <div className='bg-blue-900 text-center space-y-1 text-white p-3'>
+      <div className='bg-blue-900 text-center text-sm sm:text-base  space-y-1 text-white p-3'>
         <p>&copy; 2025 Merchants-Interactions and Tasks. All rights reserved.</p>
         <p>Designed and developed by " Tanisha Saxena"</p>
       </div>

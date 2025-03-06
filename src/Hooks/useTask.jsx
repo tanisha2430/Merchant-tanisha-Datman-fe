@@ -3,11 +3,14 @@ import toast from "react-hot-toast";
 
 const useTask = () => {
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const authToken = localStorage.getItem("authToken");
 
   // Fetch a task by ID
   const fetchTaskById = async (taskId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
         method: "GET",
@@ -27,10 +30,14 @@ const useTask = () => {
       console.error("Error fetching task:", error);
       toast.error("Error fetching task");
     }
+    setLoading(false);
+
   };
 
   // Fetch tasks by interaction ID
   const fetchTasksByInteraction = async (interactionId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/interaction/${interactionId}`, {
         method: "GET",
@@ -50,11 +57,15 @@ const useTask = () => {
       console.error("Error fetching tasks:", error);
       toast.error("Error fetching tasks");
     }
+    setLoading(false);
+
   };
 
 
 
   const fetchTasksByMerchant = async (merchantId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/merchantId/${merchantId}`, {
         method: "GET",
@@ -74,12 +85,16 @@ const useTask = () => {
       console.error("Error fetching tasks:", error);
       toast.error("Error fetching tasks");
     }
+    setLoading(false);
+
   };
 
 
 
   // Create a new task
   const createTask = async (taskDetails) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks`, {
         method: "POST",
@@ -102,10 +117,14 @@ const useTask = () => {
       console.error("Error creating task:", error);
       toast.error("Error creating task");
     }
+    setLoading(false);
+
   };
 
   // Update a task by ID
   const updateTask = async (taskId, updatedDetails) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
         method: "PUT",
@@ -128,10 +147,14 @@ const useTask = () => {
       console.error("Error updating task:", error);
       toast.error("Error updating task");
     }
+    setLoading(false);
+
   };
 
   // Delete a task by ID
   const deleteTask = async (taskId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
         method: "DELETE",
@@ -152,9 +175,11 @@ const useTask = () => {
       console.error("Error deleting task:", error);
       toast.error("Error deleting task");
     }
+    setLoading(false);
+
   };
 
-  return { tasks, fetchTaskById, fetchTasksByInteraction, createTask, updateTask,fetchTasksByMerchant, deleteTask };
+  return { tasks, fetchTaskById, fetchTasksByInteraction, createTask, updateTask,fetchTasksByMerchant, deleteTask ,loading};
 };
 
 export default useTask;

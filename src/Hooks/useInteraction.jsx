@@ -3,12 +3,15 @@ import toast from 'react-hot-toast';
 
 const useInteraction = () => {
   const [interactions, setInteractions] = useState([]);
+  const [loading, setLoading] = useState(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const authToken = localStorage.getItem("authToken");
 
 
   // Create an interaction
   const createInteraction = async (interactionDetails) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/interactions`, {
         method: 'POST',
@@ -32,10 +35,14 @@ const useInteraction = () => {
       console.error('Error creating interaction:', error);
       toast.error(error.message || 'Error creating interaction');
     }
+    setLoading(false);
+
   };
 
   // Fetch interaction by ID
   const fetchInteractionById = async (interactionId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/interactions/${interactionId}`, {
         headers: {
@@ -51,12 +58,16 @@ const useInteraction = () => {
       }
     } catch (error) {
       console.error('Error fetching interaction:', error);
+      setLoading(false);
       toast.error(error.message || 'Error fetching interaction');
     }
+
   };
 
   // Fetch all interactions by merchant ID
   const fetchInteractionsByMerchant = async (merchantId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/interactions/merchant/${merchantId}`, {
         headers: {
@@ -74,10 +85,14 @@ const useInteraction = () => {
       console.error('Error fetching interactions:', error);
       toast.error(error.message || 'Error fetching interactions');
     }
+    setLoading(false);
+
   };
 
   // Update an interaction
   const updateInteraction = async (interactionId, updatedDetails) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/interactions/${interactionId}`, {
         method: 'PUT',
@@ -99,10 +114,14 @@ const useInteraction = () => {
       console.error('Error updating interaction:', error);
       toast.error(error.message || 'Error updating interaction');
     }
+    setLoading(false);
+
   };
 
   // Delete an interaction
   const deleteInteraction = async (interactionId) => {
+    setLoading(true);
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/interactions/${interactionId}`, {
         method: 'DELETE',
@@ -122,9 +141,11 @@ const useInteraction = () => {
       console.error('Error deleting interaction:', error);
       toast.error(error.message || 'Error deleting interaction');
     }
+    setLoading(false);
+
   };
 
-  return { interactions, createInteraction, fetchInteractionById, fetchInteractionsByMerchant, updateInteraction, deleteInteraction };
+  return { interactions, createInteraction, fetchInteractionById, fetchInteractionsByMerchant, updateInteraction, deleteInteraction,loading };
 };
 
 export default useInteraction;

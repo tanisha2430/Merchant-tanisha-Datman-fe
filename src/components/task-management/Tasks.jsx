@@ -3,10 +3,11 @@ import { NavLink, useParams } from 'react-router-dom';
 import useTask from '../../Hooks/useTask';
 import useMerchant from '../../Hooks/useMerchant';
 import useInteraction from '../../Hooks/useInteraction';
+import Loader from '../loader/Loader';
 
 const Tasks = () => {
     const { id } = useParams();
-    const { tasks, fetchTasksByInteraction,fetchTasksByMerchant } = useTask();
+    const { tasks, fetchTasksByInteraction,fetchTasksByMerchant,loading } = useTask();
     const { merchant, fetchMerchantById } = useMerchant();
     const { interactions, fetchInteractionsByMerchant } = useInteraction();
 
@@ -23,9 +24,14 @@ const Tasks = () => {
         }
     }, [interactions]);
 
-    if (!merchant) {
+    // if(loading){
+    //     <Loader/>
+    // }
+
+    if (!merchant && !loading) {
         return <div className="text-center text-red-500">Merchant not found!</div>;
     }
+
 console.log(tasks)
     const getStatusStyle = (status) => {
         switch (status) {
@@ -40,7 +46,9 @@ console.log(tasks)
         }
     };
 
-    return (
+    return loading?(
+        <Loader/>
+    ):(
         <div className="min-h-screen bg-orange-100 p-6">
             <div className="p-4">
                 <div className="flex justify-around mb-6">

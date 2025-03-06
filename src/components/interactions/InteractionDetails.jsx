@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useInteraction from '../../Hooks/useInteraction';
+import Loader from '../loader/Loader';
 
 const InteractionDetails = () => {
     const { iid } = useParams();
-    const { fetchInteractionById } = useInteraction();
+    const { fetchInteractionById,loading } = useInteraction();
     const [interaction, setInteraction] = useState(null);
     console.log(iid)
     useEffect(() => {
@@ -15,9 +16,15 @@ const InteractionDetails = () => {
         fetchDetails();
     }, [iid]);
 
+    
+    if(loading){
+        <Loader/>
+    }
+
     if (!interaction) {
         return <div className="text-center text-red-500">Loading interaction details...</div>;
     }
+
 
     return (
         <div className="h-[70vh] bg-orange-100 flex items-center justify-center">
