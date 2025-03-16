@@ -1,12 +1,24 @@
-# React + Vite
+# Merchant Interactions Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project adds a **"Merchant Interactions"** feature to a CRM system, enabling agents to log communications with merchants, assign tasks, set reminders, and view interaction history.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React.js, TailwindCSS, JavaScript
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/tanisha2430/Merchant-tanisha-Datman-fe.git
+
+2. **Running the Client (Frontend)**:
+
+   ```bash
+  
+   npm i
+   npm run dev
+
+
