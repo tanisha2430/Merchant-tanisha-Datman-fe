@@ -11,6 +11,7 @@ function Home() {
     deleteSpeed: 80,
   });
 const navigate=useNavigate()
+
   useEffect(() => {
     if (!localStorage.getItem('authToken')) {
       navigate('/loginsignup');
@@ -23,7 +24,7 @@ const navigate=useNavigate()
         <div className="flex flex-col md:flex-row h-[80vh] w-full">
           <div className="flex flex-1 space-y-5 items-center justify-center  md:p-0">
             <div className="text-center mt-5 md:text-left md:ml-20">
-              <h1 className="font-bold text-2xl md:text-4xl mb-5 text-blue-900 font-myFont1">
+              <h1 className="font-bold text-2xl md:text-4xl mb-5 text-blue-900">
                Merchant Interactions and Tasks :<br />
                 <span className="font-bold text-4xl md:text-5xl mb-5 text-orange-800">{text}</span>
                 <Cursor />

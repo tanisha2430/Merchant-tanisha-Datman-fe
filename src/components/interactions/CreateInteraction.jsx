@@ -37,7 +37,7 @@ const CreateInteraction = () => {
     businessType: "",
     interactionType: "",
     title: "",
-    assignedTo: "", //stores agent._id
+    assignedTo: "", //for agent._id
     followUpDate: "",
     status: "",
     description: "",
