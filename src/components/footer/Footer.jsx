@@ -13,7 +13,7 @@ const Footer = () => {
 
           <div className='flex flex-col md:flex-row items-center justify-center gap-4 text-center'>
             <p className='text-lg'>
-              📧 <a href='mailto:your.email@example.com' className='text-black hover:underline'>tanishasaxena2412@gmail.com</a>
+              📧 <a href='tanishasaxena2412@gmail.com' className='text-black hover:underline'>tanishasaxena2412@gmail.com</a>
             </p>
             <p className='text-lg text-black'>
               📍 <span>Bareilly, UP, India</span>
